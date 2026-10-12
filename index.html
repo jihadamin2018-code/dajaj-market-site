@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dajaj Market Maroc | سوق الدواجن المغربي</title>
+<meta name="description" content="سوق مغربي للكتاكيت والأعلاف وإدارة الضيعات.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--green:#176b45;--green2:#0d4f32;--mint:#eaf6ef;--ink:#17231c;--muted:#65736a;--line:#e1e9e3;--bg:#f7faf7}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cairo',Arial,sans-serif}
+a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.container{width:min(1120px,calc(100% - 32px));margin:auto}
+.topbar{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:76px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--green2)}
+.logo{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:var(--green);color:#fff;font-size:23px}
+.links{display:flex;align-items:center;gap:22px;color:#47574c;font-size:14px}
+.actions{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:11px 17px;font-weight:700;cursor:pointer;transition:.2s}
+.btn[disabled]{opacity:.6;cursor:not-allowed}
+.btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green2)}
+.btn-light{background:#edf5ef;color:var(--green2)}
+.hero{padding:62px 0 46px;background:linear-gradient(120deg,#e9f5ec 0%,#f8fbf7 62%,#e3f1e6 100%)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}
+.eyebrow{display:inline-block;border-radius:30px;background:#d5eadb;color:var(--green2);padding:7px 13px;font-weight:700;font-size:13px}
+.hero h1{font-size:clamp(32px,4vw,52px);line-height:1.35;margin:17px 0}
+.hero p{color:#536459;line-height:2;font-size:17px;max-width:640px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-art{background:#fff;border:1px solid #dce9df;border-radius:28px;padding:26px;box-shadow:0 18px 45px #17472a12}
+.art-emoji{font-size:82px;text-align:center;background:#edf7ef;border-radius:22px;padding:25px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.stat{background:#f7faf7;border:1px solid var(--line);padding:13px;border-radius:14px;text-align:center}
+.stat b{display:block;color:var(--green);font-size:18px}.stat small{color:var(--muted)}
+.section{padding:50px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:24px}
+.section h2{font-size:27px;margin:0 0 7px}.muted{color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:21px;box-shadow:0 4px 15px #153b2010}
+.card-icon{width:48px;height:48px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:25px;margin-bottom:13px}
+.card-link{display:block}
+.card h3{margin:5px 0 8px}.card p{color:var(--muted);line-height:1.9;margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}
+.step-number{display:grid;place-items:center;width:34px;height:34px;background:var(--green);color:#fff;border-radius:50%;font-weight:800;margin-bottom:12px}
+.footer{padding:28px 0;background:#103c29;color:#e7f3ea;margin-top:30px}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.form-wrap{max-width:510px;margin:45px auto;padding:0 16px}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:0 15px 35px #153b2010}
+.form-card h1,.form-card h2{margin:0 0 8px}
+.field{display:grid;gap:7px;margin:17px 0}.field label{font-weight:700;font-size:14px}
+.field input,.field select,.field textarea{width:100%;padding:12px 13px;border:1px solid #d7e2d9;border-radius:11px;background:#fff;outline-color:var(--green)}
+.full{width:100%}
+.notice{background:#fff8e8;border:1px solid #f1dfb4;padding:12px;border-radius:12px;color:#73551c;font-size:13px;line-height:1.8;word-break:break-word}
+.dashboard-grid{display:grid;grid-template-columns:230px 1fr;gap:22px;padding:28px 0}
+.side{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;height:max-content}
+.side a{display:block;padding:10px;border-radius:9px}.side a:hover{background:var(--mint)}
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+.metric{padding:18px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.metric strong{display:block;font-size:24px;color:var(--green)}
+.listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.listing-emoji{font-size:42px;background:#eef7f0;text-align:center;padding:24px;border-radius:14px}
+.price{font-weight:800;color:var(--green)!important;font-size:20px}
+.small{font-size:13px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.toolbar input,.toolbar select{padding:11px;border:1px solid var(--line);border-radius:10px;background:#fff}
+.empty{padding:35px;text-align:center;background:#fff;border:1px dashed #b8cdbd;border-radius:16px}
+.error{color:#b42318;font-size:13px}.success{color:var(--green);font-size:13px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.two-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:start}
+.check-row{display:flex;align-items:center;gap:10px;margin:12px 0 18px;font-size:14px}
+.check-row input{width:18px;height:18px;accent-color:var(--green)}
+.badge{display:inline-flex;align-items:center;padding:5px 10px;border-radius:999px;background:#e4f4e9;color:#23683e;font-size:12px;font-weight:700}
+.row-between{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+@media(max-width:800px){.links{display:none}.hero-grid{grid-template-columns:1fr}.hero{padding:38px 0}.grid3,.listing-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.dashboard-grid{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,1fr)}.metric-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.nav{min-height:66px}.brand{font-size:17px}}
+@media(max-width:680px){.form-row,.two-column{grid-template-columns:1fr}}
+@media(max-width:420px){.steps{grid-template-columns:1fr}.actions .btn{padding:9px 10px;font-size:12px}.hero-art{padding:15px}.stat-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/dist/umd/supabase.js"></script>
+<script>
+/* ============ الإعدادات ============
+   عنوان المشروع عام. المفتاح المسموح هنا فقط: sb_publishable_...
+   لا تضع أبدا مفتاح sb_secret_ في هذا الملف. */
+var SUPABASE_URL = 'https://okptvyugekdibvcehqou.supabase.co';
+var SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_qiohUB0ftipIjVeNBu8xBQ_SN48wjXK'; // مفتاح عام (آمن للمتصفح مع RLS)
+
+(function(){
+'use strict';
+var app = document.getElementById('app');
+var sb = null;
+
+/* ---------- أدوات ---------- */
+function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+function getKey(){return SUPABASE_PUBLISHABLE_KEY || lsGet('dm_pk') || ''}
+function client(){
+  if(sb) return sb;
+  var key = getKey();
+  if(!key) throw new Error('NO_KEY');
+  if(key.indexOf('sb_secret_')===0) throw new Error('مفتاح سري غير مسموح هنا. استعمل مفتاح sb_publishable_ فقط.');
+  sb = window.supabase.createClient(SUPABASE_URL, key);
+  return sb;
+}
+function fmt(n){return Number(n).toLocaleString('fr-MA')}
+function go(path){location.hash = '#'+path}
+function parseHash(){
+  var h = location.hash.replace(/^#/,'') || '/';
+  var q = h.indexOf('?'), path = q<0?h:h.slice(0,q), params = {};
+  if(q>=0) h.slice(q+1).split('&').forEach(function(p){var kv=p.split('=');params[kv[0]]=decodeURIComponent(kv[1]||'')});
+  return {path:path, params:params};
+}
+function safeNext(n){return (n && /^\/[a-z]*$/.test(n)) ? n : '/dashboard'}
+function errMsg(e,def){return (e && e.message) ? e.message : def}
+/* تحويل رقم مغربي إلى صيغة دولية: 0612345678 -> 212612345678 */
+function waNum(v){
+  var d=String(v||'').replace(/\D/g,'');
+  if(d.indexOf('00')===0)d=d.slice(2);
+  if(d.length===10&&d.charAt(0)==='0')d='212'+d.slice(1);
+  else if(d.length===9&&/^[5-7]/.test(d))d='212'+d;
+  return (d.length>=11&&d.length<=15)?d:'';
+}
+
+/* ---------- مكونات ---------- */
+function brand(){return '<a class="brand" href="#/"><span class="logo">🐔</span><span>Dajaj Market Maroc</span></a>'}
+function header(btns){return '<header class="topbar"><div class="container nav">'+brand()+'<div class="actions">'+btns+'</div></div></header>'}
+function btnLink(href,txt,primary){return '<a class="btn '+(primary?'btn-primary':'btn-light')+'" href="#'+href+'">'+txt+'</a>'}
+function footer(){return '<footer class="footer"><div class="container footer-inner"><b>🐔 Dajaj Market Maroc</b><span class="small">منصة رقمية لخدمة قطاع الدواجن المغربي.</span><span class="small">© '+new Date().getFullYear()+' جميع الحقوق محفوظة</span></div></footer>'}
+function setHTML(h){app.innerHTML=h;window.scrollTo(0,0)}
+function $(id){return document.getElementById(id)}
+
+/* ---------- الصفحة الرئيسية ---------- */
+var features=[['🐣','سوق الكتاكيت','ابحث عن عروض الكتاكيت حسب السلالة والمدينة والكمية والسعر.','/market'],['🌾','الأعلاف والمعدات','اكتشف موردي الأعلاف ومستلزمات التربية وتواصل معهم.','/market'],['📊','إدارة الضيعة','سجّل المصاريف والوفيات والأوزان ومتابعة دورات التربية.','/farms'],['🧮','حساب الأرباح','احسب الإيرادات والتكاليف والنتيجة التقديرية لكل دورة.',''],['🤝','الموردون','أنشئ ملفاً تجارياً واعرض منتجاتك وخدماتك للمربين.','/suppliers'],['🔔','الطلبات والتنبيهات','تابع طلبات الشراء وتحديثاتها من لوحة واحدة.','/orders']];
+function viewHome(){
+  setHTML('<header class="topbar"><div class="container nav">'+brand()+'<nav class="links"><a href="#/" data-scroll="features">المميزات</a><a href="#/market">السوق</a><a href="#/" data-scroll="how">كيف يعمل؟</a></nav><div class="actions">'+btnLink('/login','دخول')+btnLink('/signup','إنشاء حساب',1)+'</div></div></header>'
+  +'<main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">منصة مغربية لقطاع الدواجن 🇲🇦</span><h1>كل ما تحتاجه لتربية الدواجن، <span style="color:var(--green)">في مكان واحد</span></h1><p>من شراء الكتاكيت والأعلاف إلى تتبع مصاريف الضيعة وحساب الأرباح. منصة تجمع المربين والموردين وتساعدك على تنظيم عملك.</p><div class="hero-buttons">'+btnLink('/market','اكتشف السوق ←',1)+btnLink('/signup','ابدأ مجاناً')+'</div></div><div class="hero-art"><div class="art-emoji">🐣 🐔 🌿</div><div class="stat-row"><div class="stat"><b>السوق</b><small>عروض ومنتجات</small></div><div class="stat"><b>الضيعة</b><small>تتبع الدورات</small></div><div class="stat"><b>الحسابات</b><small>مصاريف وأرباح</small></div></div></div></div></section>'
+  +'<section class="section" id="features"><div class="container"><div class="section-head"><div><h2>منصة واحدة، أدوات متعددة</h2><p class="muted">مصممة لتلبية احتياجات المربي والبائع في المغرب.</p></div>'+btnLink('/market','تصفح السوق')+'</div><div class="grid3">'
+  +features.map(function(f){var inner='<div class="card-icon">'+f[0]+'</div><h3>'+f[1]+'</h3><p>'+f[2]+'</p>';return f[3]?'<a class="card card-link" href="#'+f[3]+'">'+inner+'</a>':'<article class="card">'+inner+'</article>'}).join('')+'</div></div></section>'
+  +'<section class="section" id="how" style="background:#edf5ef"><div class="container"><h2>كيف تبدأ؟</h2><p class="muted">خطوات بسيطة للوصول إلى خدمات المنصة.</p><div class="steps">'
+  +[['1','أنشئ حسابك','اختر نوع الحساب وأكمل بياناتك.'],['2','ابحث أو أضف عرضاً','تصفح السوق أو جهز ملفك التجاري.'],['3','نظّم طلباتك','تابع الطلبات والتواصل مع الأطراف.'],['4','تابع الضيعة','سجل المصاريف ونتائج دورة التربية.']].map(function(s){return '<div class="step"><div class="step-number">'+s[0]+'</div><b>'+s[1]+'</b><p class="muted small">'+s[2]+'</p></div>'}).join('')
+  +'</div></div></section></main>'+footer());
+  Array.prototype.forEach.call(app.querySelectorAll('[data-scroll]'),function(a){a.addEventListener('click',function(e){e.preventDefault();var t=$(a.getAttribute('data-scroll'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+}
+
+/* ---------- إعداد المفتاح ---------- */
+function viewSetup(msg){
+  setHTML('<main class="form-wrap">'+brand()+'<form class="form-card" id="f" style="margin-top:22px"><h1>ربط قاعدة البيانات</h1><p class="muted">الصق مفتاح Supabase العام الذي يبدأ بـ <b dir="ltr">sb_publishable_</b>. يُحفظ في هذا المتصفح فقط.</p>'
+  +'<div class="field"><label>عنوان المشروع</label><input dir="ltr" readonly value="'+esc(SUPABASE_URL)+'"></div>'
+  +'<div class="field"><label>المفتاح العام (Publishable key)</label><input id="k" dir="ltr" placeholder="sb_publishable_..." autocomplete="off" autocapitalize="off" spellcheck="false"></div>'
+  +'<p class="error" id="e">'+esc(msg||'')+'</p><button class="btn btn-primary full">حفظ واختبار الاتصال</button>'
+  +'<p class="small muted">⚠️ لا تلصق أبداً مفتاحاً يبدأ بـ sb_secret_ هنا.</p></form></main>');
+  $('f').addEventListener('submit',async function(ev){
+    ev.preventDefault();var k=$('k').value.trim(),e=$('e');e.textContent='';
+    if(k.indexOf('sb_secret_')===0){e.textContent='هذا مفتاح سري! لا تستعمله هنا. استعمل مفتاح sb_publishable_ فقط.';$('k').value='';return}
+    if(k.indexOf('sb_publishable_')!==0){e.textContent='المفتاح يجب أن يبدأ بـ sb_publishable_';return}
+    lsSet('dm_pk',k);sb=null;
+    try{var r=await client().auth.getSession();if(r.error)throw r.error;go('/market')}catch(x){e.textContent='فشل الاتصال: '+errMsg(x,'')}
+  });
+}
+
+/* ---------- تسجيل الدخول ---------- */
+function viewLogin(params){
+  setHTML('<main class="form-wrap">'+brand()+'<form class="form-card" id="f" style="margin-top:22px"><h1>تسجيل الدخول</h1><p class="muted">مرحباً بعودتك إلى المنصة.</p>'
+  +'<div class="field"><label>البريد الإلكتروني</label><input id="em" required type="email" autocomplete="email" dir="ltr"></div>'
+  +'<div class="field"><label>كلمة المرور</label><input id="pw" required type="password" autocomplete="current-password"></div>'
+  +'<p class="error" id="er"></p><p class="success" id="ms"></p><button class="btn btn-primary full" id="b">دخول إلى حسابي</button>'
+  +'<button type="button" class="btn btn-light full" id="rs" style="margin-top:10px">نسيت كلمة المرور؟</button>'
+  +'<p class="small">ليس لديك حساب؟ <a href="#/signup" style="color:var(--green);font-weight:700">أنشئ حساباً</a></p></form></main>');
+  $('f').addEventListener('submit',async function(ev){
+    ev.preventDefault();$('er').textContent='';$('ms').textContent='';var b=$('b');b.disabled=true;b.textContent='جارٍ الدخول...';
+    try{var r=await client().auth.signInWithPassword({email:$('em').value.trim(),password:$('pw').value});if(r.error)throw r.error;go(safeNext(params.next))}
+    catch(e){if(e.message==='NO_KEY')return go('/setup');$('er').textContent=errMsg(e,'تعذر تسجيل الدخول.');b.disabled=false;b.textContent='دخول إلى حسابي'}
+  });
+  $('rs').addEventListener('click',async function(){
+    var em=$('em').value.trim();if(!em){$('er').textContent='أدخل بريدك الإلكتروني أولاً.';return}
+    try{var r=await client().auth.resetPasswordForEmail(em,{redirectTo:location.href.split('#')[0]});if(r.error)throw r.error;$('er').textContent='';$('ms').textContent='إذا كان البريد صالحاً، ستصلك تعليمات استعادة كلمة المرور.'}
+    catch(e){if(e.message==='NO_KEY')return go('/setup');$('er').textContent=errMsg(e,'تعذر إرسال رابط الاستعادة.')}
+  });
+}
+
+/* ---------- إنشاء حساب ---------- */
+function viewSignup(){
+  setHTML('<main class="form-wrap">'+brand()+'<form class="form-card" id="f" style="margin-top:22px"><h1>إنشاء حساب جديد</h1><p class="muted">ابدأ باستخدام منصة الدواجن المغربية.</p>'
+  +'<div class="field"><label>الاسم الكامل</label><input id="nm" required placeholder="الاسم الكامل" autocomplete="name"></div>'
+  +'<div class="field"><label>البريد الإلكتروني</label><input id="em" required type="email" placeholder="name@example.com" autocomplete="email" dir="ltr"></div>'
+  +'<div class="field"><label>كلمة المرور (8 أحرف على الأقل)</label><input id="pw" required minlength="8" type="password" autocomplete="new-password"></div>'
+  +'<div class="field"><label>نوع الحساب الأساسي</label><select id="rl"><option value="farmer">مربي دواجن</option><option value="chick_seller">بائع كتاكيت / مفقس</option><option value="supplier">مورد أعلاف ومعدات</option><option value="veterinarian">طبيب بيطري / تقني</option><option value="transport">خدمات نقل</option></select></div>'
+  +'<div class="field"><label>المدينة (اختياري)</label><input id="ct" placeholder="مثال: فاس"></div>'
+  +'<p class="error" id="er"></p><p class="success" id="ms"></p><button class="btn btn-primary full" id="b">إنشاء الحساب</button>'
+  +'<p class="small muted">بإنشاء الحساب، فإنك توافق على شروط الاستخدام وسياسة الخصوصية بعد نشرهما.</p>'
+  +'<p class="small">لديك حساب؟ <a href="#/login" style="color:var(--green);font-weight:700">تسجيل الدخول</a></p></form></main>');
+  $('f').addEventListener('submit',async function(ev){
+    ev.preventDefault();$('er').textContent='';$('ms').textContent='';var b=$('b');b.disabled=true;b.textContent='جارٍ إنشاء الحساب...';
+    try{
+      var r=await client().auth.signUp({email:$('em').value.trim(),password:$('pw').value,options:{data:{full_name:$('nm').value.trim(),requested_role:$('rl').value,city:$('ct').value.trim()}}});
+      if(r.error)throw r.error;
+      if(r.data&&r.data.session)return go('/dashboard');
+      $('ms').textContent='تم إرسال طلب التسجيل. تحقق من بريدك الإلكتروني لتأكيد الحساب، ثم سجّل الدخول.';
+    }catch(e){if(e.message==='NO_KEY')return go('/setup');$('er').textContent=errMsg(e,'تعذر إنشاء الحساب. تحقق من إعدادات قاعدة البيانات.')}
+    b.disabled=false;b.textContent='إنشاء الحساب';
+  });
+}
+
+/* ---------- حماية الصفحات ---------- */
+async function requireUser(path){
+  var r=await client().auth.getUser();
+  if(r.error&&!/session/i.test(r.error.message||''))throw r.error;
+  var u=r.data&&r.data.user;
+  if(!u){go('/login?next='+encodeURIComponent(path));return null}
+  return u;
+}
+function loading(t){setHTML('<main class="container section">'+esc(t)+'</main>')}
+function fail(e){
+  if(e&&e.message==='NO_KEY')return go('/setup');
+  setHTML('<main class="container section"><div class="notice">'+esc(errMsg(e,'حدث خطأ.'))+'</div><p><a class="btn btn-light" href="#/">الرئيسية</a> <a class="btn btn-light" href="#/setup">إعداد الاتصال</a></p></main>');
+}
+
+/* ---------- لوحة التحكم ---------- */
+async function viewDashboard(){
+  loading('جارٍ تحميل لوحة التحكم...');
+  try{
+    var u=await requireUser('/dashboard');if(!u)return;
+    var name=(u.user_metadata&&u.user_metadata.full_name)||'مستخدم';
+    setHTML(header(btnLink('/market','السوق')+'<button class="btn btn-primary" id="lo">تسجيل الخروج</button>')
+    +'<main class="container"><div class="dashboard-grid"><aside class="side"><b>القائمة الرئيسية</b><a href="#/dashboard">🏠 نظرة عامة</a><a href="#/market">🐣 سوق الكتاكيت</a><a href="#/sell">➕ إضافة عرض للبيع</a><a href="#/farms">📊 إدارة الضيعة</a><a href="#/orders">🧾 طلباتي</a><a href="#/suppliers">🤝 الموردون</a></aside>'
+    +'<section><h1>مرحباً، '+esc(name)+'</h1><p class="muted">من هنا يمكنك تصفح السوق، نشر عروض البيع، وإدارة ضيعاتك ودورات التربية.</p>'
+    +'<div class="metric-grid"><div class="metric"><span class="muted small">حالة الحساب</span><strong style="font-size:18px">مسجل الدخول</strong><span class="small">تم التحقق من الجلسة</span></div>'
+    +'<div class="metric"><span class="muted small">السوق</span><strong style="font-size:18px">تصفح العروض</strong><a href="#/market" class="small">الانتقال للسوق ←</a><br><a href="#/sell" class="small">إضافة عرض للبيع ←</a></div>'
+    +'<div class="metric"><span class="muted small">دورات التربية</span><strong style="font-size:18px">إدارة الضيعة</strong><a href="#/farms" class="small">الانتقال للضيعات ←</a></div></div>'
+    +'<div class="card"><h3>معلومات الحساب</h3><p>البريد الإلكتروني: <b dir="ltr">'+esc(u.email)+'</b></p><p class="small muted">معرّف الحساب: <span dir="ltr">'+esc(u.id)+'</span></p></div></section></div></main>');
+    $('lo').addEventListener('click',async function(){await client().auth.signOut();go('/')});
+  }catch(e){fail(e)}
+}
+
+/* ---------- السوق ---------- */
+var LCOLS='*'; /* '*' لأن أعمدة جدولك قد تختلف عن schema.sql (مثلا city_id غير موجود) */
+async function viewMarket(){
+  loading('جارٍ تحميل العروض...');
+  var items=[],myId='',err='',msg='',ordering='';
+  try{
+    var c=client();
+    var ur=await c.auth.getUser();myId=(ur.data&&ur.data.user&&ur.data.user.id)||'';
+    var r=await c.from('listings').select(LCOLS).eq('status','active').order('created_at',{ascending:false}).limit(60);
+    if(r.error)throw r.error;items=r.data||[];
+  }catch(e){if(e.message==='NO_KEY')return go('/setup');err=errMsg(e,'تعذر تحميل العروض.')}
+  var q='';
+  function draw(){
+    var list=items.filter(function(x){return ((x.title||'')+' '+(x.description||'')+' '+(x.city_text||'')).toLowerCase().indexOf(q.toLowerCase())>=0});
+    var body;
+    if(err)body='<div class="notice">لم يتم تحميل العروض. تأكد من إعداد Supabase وتشغيل ملف قاعدة البيانات. التفاصيل: '+esc(err)+'</div>';
+    else if(!list.length)body='<div class="empty"><div style="font-size:42px">🐣</div><h3>'+(items.length?'لم نعثر على نتائج':'لا توجد عروض منشورة حتى الآن')+'</h3><p class="muted">'+(items.length?'جرّب كلمة بحث أخرى.':'عند إضافة عروض حقيقية ستظهر هنا.')+'</p></div>';
+    else body='<div class="listing-grid">'+list.map(function(i){
+      var em=i.listing_type==='chicks'?'🐣':i.listing_type==='feed'?'🌾':'🐔';
+      return '<article class="card"><div class="listing-emoji">'+em+'</div><h3>'+esc(i.title)+'</h3><p class="small muted">'+esc(i.description||'')+'</p><p class="price">'+fmt(i.unit_price)+' درهم / '+esc(i.unit)+'</p><p class="small muted">الكمية المتاحة: '+esc(i.quantity_available)+'</p>'+(i.city_text?'<p class="small muted">📍 '+esc(i.city_text)+'</p>':'')
+      +(i.seller_user_id===myId?'<span class="small muted">هذا عرضك</span>':'<div class="row-between"><button class="btn btn-primary" data-order="'+esc(i.id)+'"'+((ordering===i.id||Number(i.quantity_available)<=0)?' disabled':'')+'>'+(ordering===i.id?'جارٍ إرسال الطلب...':'طلب شراء')+'</button>'+(waNum(i.contact_whatsapp)?'<a class="btn btn-light" target="_blank" rel="noopener" href="https://wa.me/'+esc(waNum(i.contact_whatsapp))+'?text='+encodeURIComponent('السلام عليكم، بخصوص عرضك: '+(i.title||''))+'">💬 واتساب</a>':'')+'</div>')+(i.seller_user_id===myId&&waNum(i.contact_whatsapp)?'<p class="small muted" dir="ltr">'+esc(waNum(i.contact_whatsapp))+'</p>':'')+'</article>'}).join('')+'</div>';
+    var keep=$('q');var had=keep&&document.activeElement===keep;
+    setHTML(header(btnLink('/','الرئيسية')+(myId?btnLink('/dashboard','لوحتي'):btnLink('/signup','إنشاء حساب',1)))
+    +'<main class="container section"><h1>سوق الدواجن</h1><p class="muted">ابحث عن الكتاكيت والأعلاف والمعدات المعروضة من الموردين.</p><div class="toolbar"><input id="q" aria-label="بحث" placeholder="ابحث عن كتاكيت أو أعلاف..." style="flex:1;min-width:200px" value="'+esc(q)+'">'+btnLink('/sell','أضف عرضاً',1)+'</div>'
+    +(msg?'<div class="notice" style="margin-bottom:16px">'+esc(msg)+'</div>':'')+body+'</main>'+footer());
+    var qi=$('q');qi.addEventListener('input',function(){q=qi.value;draw()});if(had){qi.focus();qi.setSelectionRange(q.length,q.length)}
+    Array.prototype.forEach.call(app.querySelectorAll('[data-order]'),function(btn){btn.addEventListener('click',function(){order(btn.getAttribute('data-order'))})});
+  }
+  async function order(id){
+    var item=items.filter(function(x){return x.id===id})[0];if(!item)return;
+    if(!myId){go('/login?next=/market');return}
+    var raw=window.prompt('كمية الطلب ('+item.unit+')؟','1');if(raw===null)return;
+    var qty=Number(raw);if(!isFinite(qty)||qty<=0){msg='أدخل كمية صحيحة أكبر من صفر.';draw();return}
+    var address=window.prompt('عنوان أو مدينة التسليم (اختياري):','')||null;
+    var note=window.prompt('ملاحظة للبائع (اختياري):','')||null;
+    ordering=id;msg='';draw();
+    try{
+      var c=client();
+      var r=await c.rpc('create_order_request',{p_listing_id:id,p_quantity:qty,p_delivery_address:address,p_buyer_note:note});
+      if(r.error)throw r.error;
+      msg='تم إرسال طلب الشراء بنجاح. رقم الطلب الداخلي: '+r.data;
+      var u=await c.from('listings').select(LCOLS).eq('status','active').order('created_at',{ascending:false}).limit(60);
+      items=u.data||items;
+    }catch(e){msg=errMsg(e,'تعذر إنشاء الطلب. تأكد من تشغيل ملف ترحيل الطلبات في Supabase.')}
+    ordering='';draw();
+  }
+  draw();
+}
+
+/* ---------- إضافة عرض ---------- */
+async function viewSell(){
+  loading('جارٍ التحقق من تسجيل الدخول...');
+  try{
+    var u=await requireUser('/sell');if(!u)return;
+    setHTML(header(btnLink('/market','السوق')+btnLink('/dashboard','لوحتي'))
+    +'<main class="container section"><div class="form-wrap" style="max-width:760px;margin:0 auto;padding:0"><form class="form-card" id="f"><span class="eyebrow">سوق الدواجن المغربي</span><h1>إضافة عرض جديد</h1><p class="muted">انشر عرضاً حقيقياً للكتاكيت أو الأعلاف أو المعدات. لا تنشر معلومات غير مؤكدة.</p>'
+    +'<div class="field"><label>عنوان العرض</label><input id="t" required minlength="3" maxlength="160" placeholder="مثال: كتاكيت دجاج اللحم عمر يوم"></div>'
+    +'<div class="field"><label>نوع العرض</label><select id="ty"><option value="chicks">كتاكيت</option><option value="feed">أعلاف</option><option value="equipment">معدات</option><option value="service">خدمات</option><option value="other">منتج آخر</option></select></div>'
+    +'<div class="field"><label>الوصف والتفاصيل</label><textarea id="d" rows="4" placeholder="السلالة، العمر، شروط البيع، ومعلومات مهمة للمشتري..."></textarea></div>'
+    +'<div class="form-row"><div class="field"><label>الكمية المتاحة</label><input id="qt" required type="number" min="0.001" step="0.001" value="1000"></div><div class="field"><label>وحدة البيع</label><select id="un"><option>قطعة</option><option>كيس</option><option>كيلوغرام</option><option>طن</option><option>خدمة</option></select></div></div>'
+    +'<div class="field"><label>السعر لكل وحدة (درهم مغربي)</label><input id="pr" required type="number" min="0" step="0.01" placeholder="مثال: 5.50"></div>'
+    +'<div class="field"><label>المدينة</label><input id="ct" placeholder="مثال: فاس"></div>'
+    +'<div class="field"><label>رقم واتساب للتواصل</label><input id="wa" required type="tel" inputmode="tel" dir="ltr" placeholder="0612345678" autocomplete="tel"><span class="small muted">⚠️ هذا الرقم يظهر علناً لكل زوار السوق.</span></div>'
+    +'<label class="check-row"><input type="checkbox" id="dl"> أستطيع توفير التوصيل</label>'
+    +'<div class="field" id="dtw" style="display:none"><label>شروط التوصيل</label><input id="dt" placeholder="المدن، التكلفة، وموعد التسليم"></div>'
+    +'<p class="error" id="er"></p><p class="success" id="ms"></p><button class="btn btn-primary full" id="b">نشر العرض</button><p class="small muted">ينشر العرض مباشرة بحالة نشطة. تأكد من صحة السعر والكمية قبل النشر.</p></form></div></main>');
+    $('dl').addEventListener('change',function(){$('dtw').style.display=$('dl').checked?'grid':'none'});
+    $('f').addEventListener('submit',async function(ev){
+      ev.preventDefault();$('er').textContent='';$('ms').textContent='';var b=$('b');b.disabled=true;b.textContent='جارٍ نشر العرض...';
+      try{
+        var qty=Number($('qt').value),price=Number($('pr').value);
+        if(!isFinite(qty)||qty<=0)throw new Error('أدخل كمية صحيحة أكبر من صفر.');
+        if(!isFinite(price)||price<0)throw new Error('أدخل سعراً صحيحاً.');
+        var wa=waNum($('wa').value);
+        if(!wa)throw new Error('أدخل رقم واتساب صحيحاً، مثال: 0612345678');
+        var r=await client().from('listings').insert({contact_whatsapp:wa,seller_user_id:u.id,listing_type:$('ty').value,title:$('t').value.trim(),description:$('d').value.trim()||null,quantity_available:qty,unit:$('un').value,unit_price:price,currency:'MAD',minimum_order_quantity:1,city_text:$('ct').value.trim()||null,delivery_available:$('dl').checked,delivery_terms:$('dt').value.trim()||null,status:'active'});
+        if(r.error)throw r.error;
+        $('ms').textContent='تم نشر العرض بنجاح. سيظهر في السوق.';
+        $('t').value='';$('d').value='';$('wa').value='';$('qt').value='1000';$('pr').value='';$('ct').value='';$('dt').value='';
+      }catch(e){$('er').textContent=errMsg(e,'تعذر نشر العرض. تحقق من إعداد قاعدة البيانات وصلاحيات RLS.')}
+      b.disabled=false;b.textContent='نشر العرض';
+    });
+  }catch(e){fail(e)}
+}
+
+/* ---------- الضيعات ---------- */
+async function viewFarms(){
+  loading('جارٍ تحميل بيانات الضيعات...');
+  var u,farms=[],cycles=[],err='',msg='',sel='';
+  try{u=await requireUser('/farms');if(!u)return}catch(e){return fail(e)}
+  async function load(){
+    var c=client();
+    var f=await c.from('farms').select('*').order('created_at',{ascending:false});
+    if(f.error)throw f.error;farms=f.data||[];
+    if(!sel&&farms[0])sel=farms[0].id;
+    if(farms.length){var cy=await c.from('farm_cycles').select('*').in('farm_id',farms.map(function(x){return x.id})).order('start_date',{ascending:false});if(cy.error)throw cy.error;cycles=cy.data||[]}else cycles=[];
+  }
+  function draw(){
+    var today=new Date().toISOString().slice(0,10);
+    setHTML(header(btnLink('/dashboard','لوحتي')+btnLink('/market','السوق'))
+    +'<main class="container section"><h1>إدارة الضيعات ودورات التربية</h1><p class="muted">أنشئ ضيعتك وسجّل كل دورة تربية. بياناتك خاصة بحسابك وفق سياسات قاعدة البيانات.</p>'
+    +(err?'<p class="error">'+esc(err)+'</p>':'')+(msg?'<p class="success">'+esc(msg)+'</p>':'')
+    +'<div class="two-column"><form class="form-card" id="ff"><h2>إضافة ضيعة</h2>'
+    +'<div class="field"><label>اسم الضيعة</label><input id="fn" required placeholder="اسم الضيعة"></div><div class="field"><label>المدينة</label><input id="fc" placeholder="مثال: فاس"></div><div class="field"><label>العنوان (اختياري)</label><input id="fa"></div><div class="field"><label>الطاقة الاستيعابية (اختياري)</label><input id="fp" type="number" min="0"></div>'
+    +'<div class="field"><label>نوع التربية</label><select id="ft"><option value="broiler">دجاج اللحم</option><option value="layer">دجاج البيض</option><option value="other">أخرى</option></select></div><button class="btn btn-primary full">حفظ الضيعة</button></form>'
+    +'<form class="form-card" id="cf"><h2>بدء دورة تربية</h2><div class="field"><label>الضيعة</label><select id="cs" required>'+(farms.length?farms.map(function(f){return '<option value="'+esc(f.id)+'"'+(f.id===sel?' selected':'')+'>'+esc(f.farm_name)+'</option>'}).join(''):'<option value="">أنشئ ضيعة أولاً</option>')+'</select></div>'
+    +'<div class="field"><label>اسم الدورة</label><input id="cn" required placeholder="مثال: دورة أكتوبر 2026"></div><div class="field"><label>تاريخ البداية</label><input id="cd" required type="date" value="'+today+'"></div><div class="field"><label>عدد الكتاكيت عند البداية</label><input id="cc" required type="number" min="0" step="1" value="1000"></div>'
+    +'<button class="btn btn-primary full"'+(farms.length?'':' disabled')+'>حفظ دورة التربية</button></form></div>'
+    +'<section class="section"><h2>ضيعاتي</h2>'+(farms.length?'<div class="listing-grid">'+farms.map(function(f){return '<article class="card"><div class="listing-emoji">🏡</div><h3>'+esc(f.farm_name)+'</h3><p class="muted small">'+esc((f.notes||'').replace('المدينة: ','')||'المغرب')+(f.address?' · '+esc(f.address):'')+'</p><p class="small">الطاقة الاستيعابية: '+(f.capacity==null?'غير محددة':esc(f.capacity))+'</p><p class="small muted">نوع التربية: '+(f.poultry_type==='layer'?'دجاج البيض':f.poultry_type==='other'?'أخرى':'دجاج اللحم')+'</p></article>'}).join('')+'</div>':'<div class="empty">لم تضف ضيعة بعد.</div>')+'</section>'
+    +'<section class="section"><h2>دورات التربية</h2>'+(cycles.length?'<div class="listing-grid">'+cycles.map(function(c){return '<article class="card"><div class="listing-emoji">🐣</div><h3>'+esc(c.cycle_name)+'</h3><p class="small muted">تاريخ البداية: '+esc(c.start_date)+'</p><p>العدد الابتدائي: <b>'+fmt(c.initial_chicks_count)+'</b></p><span class="badge">'+(c.status==='active'?'نشطة':c.status==='completed'?'مكتملة':'مخططة')+'</span></article>'}).join('')+'</div>':'<div class="empty">لا توجد دورات مسجلة حتى الآن.</div>')+'</section></main>');
+    $('cs').addEventListener('change',function(){sel=$('cs').value});
+    $('ff').addEventListener('submit',async function(ev){
+      ev.preventDefault();err='';msg='';
+      try{
+        var cap=$('fp').value,city=$('fc').value.trim(),addr=$('fa').value.trim();
+        var r=await client().from('farms').insert({owner_user_id:u.id,farm_name:$('fn').value.trim(),address:addr||null,capacity:cap?Number(cap):null,poultry_type:$('ft').value,notes:city?'المدينة: '+city:null}).select('id').single();
+        if(r.error)throw r.error;if(r.data&&r.data.id)sel=r.data.id;msg='تم إنشاء الضيعة.';await load();
+      }catch(e){err=errMsg(e,'تعذر إنشاء الضيعة.')}
+      draw();
+    });
+    $('cf').addEventListener('submit',async function(ev){
+      ev.preventDefault();err='';msg='';
+      try{
+        sel=$('cs').value;if(!sel)throw new Error('أنشئ ضيعة أولاً.');
+        var n=Number($('cc').value);if(!Number.isInteger(n)||n<0)throw new Error('أدخل عدداً صحيحاً للكتاكيت.');
+        var r=await client().from('farm_cycles').insert({farm_id:sel,cycle_name:$('cn').value.trim(),start_date:$('cd').value,initial_chicks_count:n,poultry_type:'broiler',status:'active'});
+        if(r.error)throw r.error;msg='تم إنشاء دورة التربية.';await load();
+      }catch(e){err=errMsg(e,'تعذر إنشاء الدورة.')}
+      draw();
+    });
+  }
+  try{await load()}catch(e){if(e.message==='NO_KEY')return go('/setup');err=errMsg(e,'تعذر تحميل الضيعات.')}
+  draw();
+}
+
+/* ---------- الموردون ---------- */
+async function viewSuppliers(){
+  loading('جارٍ تحميل الموردين...');
+  var list=[],myId='',mine=null,err='',msg='';
+  async function load(){
+    var c=client();
+    var ur=await c.auth.getUser();myId=(ur.data&&ur.data.user&&ur.data.user.id)||'';
+    var r=await c.from('supplier_profiles').select('*').order('created_at',{ascending:false}).limit(100);
+    if(r.error)throw r.error;list=r.data||[];
+    mine=list.filter(function(x){return x.owner_user_id===myId})[0]||null;
+  }
+  function draw(){
+    var cards=list.length?'<div class="listing-grid">'+list.map(function(s){
+      var w=waNum(s.contact_whatsapp);
+      return '<article class="card"><div class="listing-emoji">🤝</div><h3>'+esc(s.business_name)+'</h3>'+(s.city_text?'<p class="small muted">📍 '+esc(s.city_text)+'</p>':'')+(s.description?'<p class="small muted">'+esc(s.description)+'</p>':'')
+      +(w?'<a class="btn btn-light" target="_blank" rel="noopener" href="https://wa.me/'+esc(w)+'?text='+encodeURIComponent('السلام عليكم، وجدت ملفكم في Dajaj Market Maroc')+'">💬 واتساب</a>':'')+(s.owner_user_id===myId?' <span class="badge">ملفك</span>':'')+'</article>'}).join('')+'</div>'
+      :'<div class="empty"><div style="font-size:42px">🤝</div><h3>لا يوجد موردون بعد</h3><p class="muted">كن أول من ينشئ ملفاً تجارياً.</p></div>';
+    var m=mine||{};
+    var form=myId?'<form class="form-card" id="sf" style="margin-bottom:24px"><h2>'+(mine?'تعديل ملفي التجاري':'إنشاء ملفي التجاري')+'</h2>'
+      +'<div class="field"><label>اسم النشاط</label><input id="bn" required minlength="2" maxlength="120" value="'+esc(m.business_name||'')+'" placeholder="مثال: مفقس الأمل"></div>'
+      +'<div class="field"><label>المدينة</label><input id="sc" value="'+esc(m.city_text||'')+'" placeholder="مثال: فاس"></div>'
+      +'<div class="field"><label>رقم واتساب</label><input id="sw" required type="tel" inputmode="tel" dir="ltr" value="'+esc(m.contact_whatsapp||'')+'" placeholder="0612345678"><span class="small muted">⚠️ هذا الرقم يظهر علناً لكل الزوار.</span></div>'
+      +'<div class="field"><label>وصف النشاط</label><textarea id="sd" rows="3" placeholder="ما الذي تبيعه أو تقدمه للمربين؟">'+esc(m.description||'')+'</textarea></div>'
+      +'<p class="error" id="er">'+esc(err)+'</p><p class="success" id="ms">'+esc(msg)+'</p><button class="btn btn-primary full" id="sb">'+(mine?'حفظ التعديلات':'نشر ملفي')+'</button></form>'
+      :'<div class="notice" style="margin-bottom:24px">سجّل الدخول لإنشاء ملفك التجاري. <a href="#/login?next=/suppliers" style="font-weight:700;color:var(--green)">دخول</a> · <a href="#/signup" style="font-weight:700;color:var(--green)">إنشاء حساب</a></div>';
+    setHTML(header(btnLink('/','الرئيسية')+btnLink('/market','السوق')+(myId?btnLink('/dashboard','لوحتي'):''))
+      +'<main class="container section"><h1>الموردون</h1><p class="muted">ملفات تجارية لموردي الكتاكيت والأعلاف والمعدات.</p>'+form+cards+'</main>'+footer());
+    var f=$('sf');if(!f)return;
+    f.addEventListener('submit',async function(ev){
+      ev.preventDefault();err='';msg='';var b=$('sb');b.disabled=true;b.textContent='جارٍ الحفظ...';
+      try{
+        var w=waNum($('sw').value);if(!w)throw new Error('أدخل رقم واتساب صحيحاً، مثال: 0612345678');
+        var r=await client().from('supplier_profiles').upsert({owner_user_id:myId,business_name:$('bn').value.trim(),city_text:$('sc').value.trim()||null,contact_whatsapp:w,description:$('sd').value.trim()||null},{onConflict:'owner_user_id'});
+        if(r.error)throw r.error;
+        msg='تم حفظ ملفك التجاري.';await load();
+      }catch(e){err=errMsg(e,'تعذر حفظ الملف.')}
+      draw();
+    });
+  }
+  try{await load()}catch(e){if(e.message==='NO_KEY')return go('/setup');err=errMsg(e,'تعذر تحميل الموردين.')}
+  draw();
+}
+
+/* ---------- الطلبات ---------- */
+var statusAr={pending:'بانتظار رد البائع',accepted:'مقبول',rejected:'مرفوض',preparing:'قيد التجهيز',dispatched:'تم الإرسال',delivered:'تم التسليم',completed:'مكتمل',cancelled:'ملغى',disputed:'قيد النزاع'};
+async function viewOrders(){
+  loading('جارٍ تحميل الطلبات...');
+  var u,orders=[],items=[],err='',busy='';
+  try{u=await requireUser('/orders');if(!u)return}catch(e){return fail(e)}
+  async function load(){
+    var c=client();
+    var r=await c.from('orders').select('*').order('created_at',{ascending:false});
+    if(r.error)throw r.error;orders=r.data||[];
+    if(orders.length){var it=await c.from('order_items').select('*').in('order_id',orders.map(function(o){return o.id}));if(it.error)throw it.error;items=it.data||[]}else items=[];
+  }
+  function draw(){
+    setHTML(header(btnLink('/dashboard','لوحتي')+btnLink('/market','السوق'))
+    +'<main class="container section"><h1>طلباتي</h1><p class="muted">طلبات الشراء التي أرسلتها أو العروض التي تبيعها.</p>'+(err?'<div class="notice">'+esc(err)+'</div>':'')
+    +(orders.length?'<div class="listing-grid">'+orders.map(function(o){
+      return '<article class="card"><div class="row-between"><h3>طلب #'+esc(o.order_number)+'</h3><span class="badge">'+esc(statusAr[o.status]||o.status)+'</span></div><p class="small muted">'+esc(new Date(o.created_at).toLocaleString('ar-MA'))+'</p>'
+      +items.filter(function(i){return i.order_id===o.id}).map(function(i){return '<p>'+esc(i.product_title_snapshot)+' — '+esc(i.quantity)+' '+esc(i.unit)+' × '+fmt(i.unit_price_snapshot)+' درهم</p>'}).join('')
+      +'<p class="price">الإجمالي: '+fmt(o.total_amount)+' درهم</p><p class="small muted">'+(o.buyer_user_id===u.id?'أنت المشتري':'أنت البائع')+'</p>'
+      +(o.delivery_address?'<p class="small">التسليم: '+esc(o.delivery_address)+'</p>':'')+(o.buyer_note?'<p class="small">ملاحظة: '+esc(o.buyer_note)+'</p>':'')
+      +((o.status==='pending'||o.status==='accepted')?'<button class="btn btn-light" data-cancel="'+esc(o.id)+'"'+(busy===o.id?' disabled':'')+'>'+(busy===o.id?'جارٍ الإلغاء...':'إلغاء الطلب')+'</button>':'')+'</article>'}).join('')+'</div>'
+      :'<div class="empty"><h3>لا توجد طلبات بعد</h3><p>عندما تطلب منتجاً من السوق سيظهر هنا.</p><a class="btn btn-primary" href="#/market">تصفح السوق</a></div>')+'</main>');
+    Array.prototype.forEach.call(app.querySelectorAll('[data-cancel]'),function(b){b.addEventListener('click',async function(){
+      if(!window.confirm('هل تريد إلغاء هذا الطلب؟ سيتم إعادة الكمية إلى المخزون إذا كان الطلب في حالة تسمح بالإلغاء.'))return;
+      busy=b.getAttribute('data-cancel');err='';draw();
+      try{var r=await client().rpc('cancel_order_request',{p_order_id:busy,p_reason:'إلغاء من المستخدم'});if(r.error)throw r.error;await load()}catch(e){err=errMsg(e,'تعذر إلغاء الطلب.')}
+      busy='';draw();
+    })});
+  }
+  try{await load()}catch(e){if(e.message==='NO_KEY')return go('/setup');err=errMsg(e,'تعذر تحميل الطلبات.')}
+  draw();
+}
+
+/* ---------- الموجّه ---------- */
+var routes={'/':viewHome,'/login':viewLogin,'/signup':viewSignup,'/setup':viewSetup,'/market':viewMarket,'/dashboard':viewDashboard,'/sell':viewSell,'/farms':viewFarms,'/orders':viewOrders,'/suppliers':viewSuppliers};
+var needsKey={'/login':1,'/signup':1,'/market':1,'/dashboard':1,'/sell':1,'/farms':1,'/orders':1,'/suppliers':1};
+function route(){
+  var h=parseHash();
+  if(needsKey[h.path]&&!getKey()){return viewSetup()}
+  (routes[h.path]||viewHome)(h.params);
+}
+window.addEventListener('hashchange',route);
+if(!window.supabase){app.innerHTML='<main class="container section"><div class="notice">تعذر تحميل مكتبة Supabase. تحقق من اتصال الإنترنت ثم حدّث الصفحة.</div></main>'}
+else route();
+})();
+</script>
+</body>
+</html>
