@@ -17,6 +17,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#176b45">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23176b45'/%3E%3Ctext x='50' y='68' font-size='56' text-anchor='middle'%3E%F0%9F%90%94%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -89,6 +90,54 @@ a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
 @media(max-width:800px){.links{display:none}.hero-grid{grid-template-columns:1fr}.hero{padding:38px 0}.grid3,.listing-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.dashboard-grid{grid-template-columns:1fr}.side{display:grid;grid-template-columns:repeat(2,1fr)}.metric-grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.nav{min-height:66px}.brand{font-size:17px}}
 @media(max-width:680px){.form-row,.two-column{grid-template-columns:1fr}}
 @media(max-width:420px){.steps{grid-template-columns:1fr}.actions .btn{padding:9px 10px;font-size:12px}.hero-art{padding:15px}.stat-row{grid-template-columns:1fr}}
+.hx-hero{background:linear-gradient(180deg,#176b45 0%,#0d4f32 100%);color:#fff;padding:34px 0 56px}
+.hx-hero .eyebrow{background:rgba(255,255,255,.16);color:#fff}
+.hx-hero h1{font-size:clamp(32px,5vw,52px);line-height:1.35;margin:16px 0 12px;font-weight:800}
+.hx-hero p{color:#e3f1ea;font-size:17px;line-height:1.8;max-width:620px;margin:0}
+.hx-search{display:flex;align-items:center;gap:10px;background:#fff;color:#65736a;border-radius:14px;padding:0 16px;min-height:56px;margin-top:22px;max-width:620px}
+.hx-btns{display:flex;gap:10px;margin-top:14px;max-width:620px}
+.hx-btns a,.hx-cta a{min-height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;padding:0 18px}
+.hx-btns a{flex:1}
+.hx-gold{background:#f2b632;color:#17231c}
+.hx-outline{border:2px solid #fff;color:#fff}
+.hx-stats{margin-top:-28px;position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 8px;text-align:center;box-shadow:0 8px 24px #153b2012}
+.hx-stats b{display:block;font-size:24px;font-weight:800;color:var(--green)}
+.hx-stats small{color:var(--muted);font-size:13px}
+.hx-mid{border-inline:1px solid var(--line)}
+.hx-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
+.hx-cat{background:#fff;border:1px solid var(--line);border-radius:16px;min-height:96px;padding:14px;display:flex;flex-direction:column;justify-content:center;gap:8px;font-size:17px}
+.hx-cat-ic{font-size:30px;line-height:1}
+.hx-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:16px}
+.hx-cta{background:#0d4f32;color:#fff;border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.hx-cta h2{margin:0;font-size:24px}
+.hx-cta p{margin:0;color:#e3f1ea;line-height:1.8}
+@media(max-width:800px){.hx-cats{grid-template-columns:repeat(2,1fr)}.hx-steps{grid-template-columns:1fr}.hx-cta a{align-self:stretch}}
+@media(max-width:420px){.hx-btns{flex-direction:column}}
+.hx-dash{padding:28px 0 62px}
+.hx-dash h1{font-size:clamp(28px,4vw,40px);margin:14px 0 8px}
+.hx-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-34px;position:relative;z-index:1}
+.btn{min-height:44px}
+main.container.section>h1{font-size:clamp(26px,4vw,34px);font-weight:800;color:var(--green2);margin:0 0 6px}
+.card,.form-card{border-radius:18px}
+.card h3{font-size:18px}
+.toolbar input,.toolbar select{min-height:48px;border-radius:12px}
+.form-card .btn-primary,.form-card .btn-light{min-height:48px;font-size:16px}
+@media(max-width:800px){.hx-tiles{grid-template-columns:repeat(2,1fr)}}
+.brand{white-space:nowrap}
+.hx-cat{transition:.2s}
+.hx-cat:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 8px 20px #153b2014}
+.hx-cat-ic{width:48px;height:48px;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:25px;line-height:1}
+.card{transition:box-shadow .2s,transform .2s}
+.card-link:hover,.listing-grid .card:hover{box-shadow:0 10px 26px #153b2018;transform:translateY(-2px)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f2b632;outline-offset:2px}
+.wa-fab{position:fixed;left:16px;bottom:16px;width:56px;height:56px;border-radius:50%;background:#25a244;color:#fff;display:grid;place-items:center;font-size:28px;box-shadow:0 8px 22px #0d4f3244;z-index:20}
+.wa-fab:hover{background:#1e8a39}
+.footer a{color:#e7f3ea}
+@media(max-width:800px){.hx-tiles .hx-cat:last-child:nth-child(odd){grid-column:1/-1}}
+@media(max-width:480px){.hide-xs{display:none}.brand{font-size:16px;gap:8px}.logo{width:38px;height:38px;font-size:20px}.nav{gap:8px}}
+.hx-stats{grid-template-columns:repeat(auto-fit,minmax(90px,1fr))}
+.hx-stats>div+div{border-inline-start:1px solid var(--line)}
+.hx-mid{border:0}
 </style>
 </head>
 <body>
@@ -140,24 +189,73 @@ function waNum(v){
 }
 
 /* ---------- مكونات ---------- */
-function brand(){return '<a class="brand" href="#/"><span class="logo">🐔</span><span>Dajaj Market Maroc</span></a>'}
+function brand(){return '<a class="brand" href="#/"><span class="logo">🐔</span><span>Dajaj Market<span class="hide-xs"> Maroc</span></span></a>'}
 function header(btns){return '<header class="topbar"><div class="container nav">'+brand()+'<div class="actions">'+btns+'</div></div></header>'}
 function btnLink(href,txt,primary){return '<a class="btn '+(primary?'btn-primary':'btn-light')+'" href="#'+href+'">'+txt+'</a>'}
-function footer(){return '<footer class="footer"><div class="container footer-inner"><b>🐔 Dajaj Market Maroc</b><span class="small">منصة رقمية لخدمة قطاع الدواجن المغربي.</span><span class="small">© '+new Date().getFullYear()+' جميع الحقوق محفوظة</span></div></footer>'}
+function footer(){return '<footer class="footer"><div class="container footer-inner"><b>🐔 Dajaj Market Maroc</b><span class="small">منصة رقمية لخدمة قطاع الدواجن المغربي.</span><a class="small" target="_blank" rel="noopener" href="https://wa.me/212653769294" style="text-decoration:underline">تواصل معنا عبر واتساب</a><span class="small">© '+new Date().getFullYear()+' جميع الحقوق محفوظة</span></div></footer><a class="wa-fab" target="_blank" rel="noopener" href="https://wa.me/212653769294?text='+encodeURIComponent('السلام عليكم، لدي سؤال حول Dajaj Market')+'" aria-label="تواصل عبر واتساب">💬</a>'}
 function setHTML(h){app.innerHTML=h;window.scrollTo(0,0)}
 function $(id){return document.getElementById(id)}
 
 /* ---------- الصفحة الرئيسية ---------- */
-var features=[['🐣','سوق الكتاكيت','ابحث عن عروض الكتاكيت حسب السلالة والمدينة والكمية والسعر.','/market'],['🌾','الأعلاف والمعدات','اكتشف موردي الأعلاف ومستلزمات التربية وتواصل معهم.','/market'],['📊','إدارة الضيعة','سجّل المصاريف والوفيات والأوزان ومتابعة دورات التربية.','/farms'],['🧮','حساب الأرباح','احسب الإيرادات والتكاليف والنتيجة التقديرية لكل دورة.',''],['🤝','الموردون','أنشئ ملفاً تجارياً واعرض منتجاتك وخدماتك للمربين.','/suppliers'],['🔔','الطلبات والتنبيهات','تابع طلبات الشراء وتحديثاتها من لوحة واحدة.','/orders']];
+var hxCats=[['🐣','الكتاكيت'],['🌾','الأعلاف'],['🛠️','المعدات'],['📊','إدارة الضيعة']];
+function hxOffer(i){
+  var em=i.listing_type==='chicks'?'🐣':i.listing_type==='feed'?'🌾':'🐔';
+  var w=waNum(i.contact_whatsapp);
+  return '<article class="card"><div class="listing-emoji">'+em+'</div><h3>'+esc(i.title)+'</h3>'
+    +(i.city_text?'<p class="small muted">📍 '+esc(i.city_text)+'</p>':'')
+    +'<p class="price">'+fmt(i.unit_price)+' درهم / '+esc(i.unit)+'</p>'
+    +'<div class="row-between"><a class="btn btn-primary" href="#/market">اطلب الآن</a>'
+    +(w?'<a class="btn btn-light" target="_blank" rel="noopener" href="https://wa.me/'+esc(w)+'?text='+encodeURIComponent('السلام عليكم، بخصوص عرضك: '+(i.title||''))+'">💬 واتساب</a>':'')
+    +'</div></article>';
+}
 function viewHome(){
-  setHTML('<header class="topbar"><div class="container nav">'+brand()+'<nav class="links"><a href="#/" data-scroll="features">المميزات</a><a href="#/market">السوق</a><a href="#/" data-scroll="how">كيف يعمل؟</a></nav><div class="actions">'+btnLink('/login','دخول')+btnLink('/signup','إنشاء حساب',1)+'</div></div></header>'
-  +'<main><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">منصة مغربية لقطاع الدواجن 🇲🇦</span><h1>كل ما تحتاجه لتربية الدواجن، <span style="color:var(--green)">في مكان واحد</span></h1><p>من شراء الكتاكيت والأعلاف إلى تتبع مصاريف الضيعة وحساب الأرباح. منصة تجمع المربين والموردين وتساعدك على تنظيم عملك.</p><div class="hero-buttons">'+btnLink('/market','اكتشف السوق ←',1)+btnLink('/signup','ابدأ مجاناً')+'</div></div><div class="hero-art"><div class="art-emoji">🐣 🐔 🌿</div><div class="stat-row"><div class="stat"><b>السوق</b><small>عروض ومنتجات</small></div><div class="stat"><b>الضيعة</b><small>تتبع الدورات</small></div><div class="stat"><b>الحسابات</b><small>مصاريف وأرباح</small></div></div></div></div></section>'
-  +'<section class="section" id="features"><div class="container"><div class="section-head"><div><h2>منصة واحدة، أدوات متعددة</h2><p class="muted">مصممة لتلبية احتياجات المربي والبائع في المغرب.</p></div>'+btnLink('/market','تصفح السوق')+'</div><div class="grid3">'
-  +features.map(function(f){var inner='<div class="card-icon">'+f[0]+'</div><h3>'+f[1]+'</h3><p>'+f[2]+'</p>';return f[3]?'<a class="card card-link" href="#'+f[3]+'">'+inner+'</a>':'<article class="card">'+inner+'</article>'}).join('')+'</div></div></section>'
-  +'<section class="section" id="how" style="background:#edf5ef"><div class="container"><h2>كيف تبدأ؟</h2><p class="muted">خطوات بسيطة للوصول إلى خدمات المنصة.</p><div class="steps">'
-  +[['1','أنشئ حسابك','اختر نوع الحساب وأكمل بياناتك.'],['2','ابحث أو أضف عرضاً','تصفح السوق أو جهز ملفك التجاري.'],['3','نظّم طلباتك','تابع الطلبات والتواصل مع الأطراف.'],['4','تابع الضيعة','سجل المصاريف ونتائج دورة التربية.']].map(function(s){return '<div class="step"><div class="step-number">'+s[0]+'</div><b>'+s[1]+'</b><p class="muted small">'+s[2]+'</p></div>'}).join('')
-  +'</div></div></section></main>'+footer());
+  setHTML('<header class="topbar"><div class="container nav">'+brand()+'<nav class="links"><a href="#/" data-scroll="features">الأقسام</a><a href="#/market">السوق</a><a href="#/" data-scroll="how">كيف يعمل؟</a></nav><div class="actions">'+btnLink('/login','دخول')+btnLink('/signup','إنشاء حساب',1)+'</div></div></header>'
+  +'<main>'
+  +'<section class="hx-hero"><div class="container"><span class="eyebrow">منصة مغربية لمربّي الدواجن 🇲🇦</span>'
+  +'<h1>اشترِ وبِع الدواجن بثقة</h1>'
+  +'<p>كتاكيت، أعلاف ومعدات من موردين مغاربة، مباشرة وبدون وسطاء.</p>'
+  +'<a class="hx-search" href="#/market"><span aria-hidden="true">🔍</span><span>ابحث عن كتاكيت أو أعلاف...</span></a>'
+  +'<div class="hx-btns"><a class="hx-gold" href="#/market">تصفّح العروض</a><a class="hx-outline" href="#/sell">أضف عرضك مجاناً</a></div>'
+  +'</div></section>'
+  +'<div class="container"><section class="hx-stats" id="hx-stats" style="display:none"><div><b id="st-offers">—</b><small>عرض متاح</small></div><div><b id="st-sup">—</b><small>مورّد</small></div><div><b id="st-city">—</b><small>مدينة</small></div></section></div>'
+  +'<section class="section" id="features"><div class="container"><h2>تصفّح حسب القسم</h2><div class="hx-cats">'
+  +hxCats.map(function(c){return '<a class="hx-cat" href="#'+(c[1]==='إدارة الضيعة'?'/farms':'/market')+'"><span class="hx-cat-ic" aria-hidden="true">'+c[0]+'</span><b>'+c[1]+'</b></a>'}).join('')
+  +'</div></div></section>'
+  +'<section class="section" style="padding-top:8px"><div class="container"><div class="section-head"><h2 style="margin:0">أحدث العروض</h2><a class="btn btn-light" href="#/market">عرض الكل</a></div><div class="listing-grid" id="hx-offers"><div class="empty" style="grid-column:1/-1">جارٍ تحميل العروض...</div></div></div></section>'
+  +'<section class="section" style="padding-top:8px"><div class="container"><h2>لماذا Dajaj Market؟</h2><div class="grid3" style="margin-top:16px">'
+  +[['🤝','مباشرة بدون وسطاء','تتواصل مع المورّد وتتفق معه على السعر والتسليم.'],['💬','تواصل عبر واتساب','زر واتساب في كل عرض لتسأل وتفاوض بسرعة.'],['🆓','مجاني','التسجيل ونشر العروض بدون أي رسوم.']].map(function(w){return '<article class="card"><div class="card-icon">'+w[0]+'</div><h3>'+w[1]+'</h3><p>'+w[2]+'</p></article>'}).join('')
+  +'</div></div></section>'
+  +'<section class="section" id="how" style="background:#edf5ef"><div class="container"><h2>كيف يعمل السوق؟</h2><div class="hx-steps">'
+  +[['1','اختر العرض','قارن الأسعار والمدن والموردين.'],['2','أرسل طلبك','الكمية وعنوان التسليم، في ثوانٍ.'],['3','المورّد يتواصل معك','يصله إشعار ويؤكد الطلب معك.']].map(function(s){return '<div class="step"><div class="step-number">'+s[0]+'</div><b>'+s[1]+'</b><p class="muted small">'+s[2]+'</p></div>'}).join('')
+  +'</div></div></section>'
+  +'<section class="section"><div class="container"><div class="hx-cta"><h2>عندك كتاكيت أو أعلاف للبيع؟</h2><p>أضف عرضك مجاناً ووصّل منتجك لمربّين في كل المغرب.</p><a class="hx-gold" href="#/sell">ابدأ البيع الآن</a></div></div></section>'
+  +'</main>'+footer());
   Array.prototype.forEach.call(app.querySelectorAll('[data-scroll]'),function(a){a.addEventListener('click',function(e){e.preventDefault();var t=$(a.getAttribute('data-scroll'));if(t)t.scrollIntoView({behavior:'smooth'})})});
+  loadHome();
+}
+async function loadHome(){
+  try{
+    var c=client();
+    var rs=await Promise.all([
+      c.from('listings').select('*',{count:'exact'}).eq('status','active').order('created_at',{ascending:false}).limit(60),
+      c.from('supplier_profiles').select('id',{count:'exact',head:true})
+    ]);
+    var box=$('hx-offers');if(!box)return;
+    var l=rs[0],s=rs[1];
+    var items=(l.error?[]:l.data)||[];
+    var cities={};items.forEach(function(i){var t=(i.city_text||'').trim().toLowerCase();if(t)cities[t]=1});
+    function showStat(id,n){var b=$(id);if(!b)return false;var cell=b.parentNode;if(n>=5){b.textContent=fmt(n);cell.style.display='';return true}cell.style.display='none';return false}
+    var any=false;
+    any=showStat('st-offers',l.error?0:(l.count==null?items.length:l.count))||any;
+    any=showStat('st-sup',(s.error||s.count==null)?0:s.count)||any;
+    any=showStat('st-city',l.error?0:Object.keys(cities).length)||any;
+    var strip=$('hx-stats');if(strip)strip.style.display=any?'grid':'none';
+    box.innerHTML=items.length
+      ?items.slice(0,3).map(hxOffer).join('')
+      :'<div class="empty" style="grid-column:1/-1"><div style="font-size:42px">🐣</div><h3>لا توجد عروض منشورة بعد</h3><p class="muted">كن أول من ينشر عرضاً.</p><a class="btn btn-primary" href="#/sell">أضف عرضاً</a></div>';
+  }catch(e){
+    var b=$('hx-offers');if(b)b.innerHTML='<div class="empty" style="grid-column:1/-1">تعذر تحميل العروض الآن. <a href="#/market" style="color:var(--green);font-weight:700">افتح السوق</a></div>';
+  }
 }
 
 /* ---------- إعداد المفتاح ---------- */
@@ -239,13 +337,12 @@ async function viewDashboard(){
   try{
     var u=await requireUser('/dashboard');if(!u)return;
     var name=(u.user_metadata&&u.user_metadata.full_name)||'مستخدم';
+    var tiles=[['🐣','سوق الكتاكيت','/market'],['➕','إضافة عرض للبيع','/sell'],['🧾','طلباتي','/orders'],['📊','إدارة الضيعة','/farms'],['🤝','الموردون','/suppliers']];
     setHTML(header(btnLink('/market','السوق')+'<button class="btn btn-primary" id="lo">تسجيل الخروج</button>')
-    +'<main class="container"><div class="dashboard-grid"><aside class="side"><b>القائمة الرئيسية</b><a href="#/dashboard">🏠 نظرة عامة</a><a href="#/market">🐣 سوق الكتاكيت</a><a href="#/sell">➕ إضافة عرض للبيع</a><a href="#/farms">📊 إدارة الضيعة</a><a href="#/orders">🧾 طلباتي</a><a href="#/suppliers">🤝 الموردون</a></aside>'
-    +'<section><h1>مرحباً، '+esc(name)+'</h1><p class="muted">من هنا يمكنك تصفح السوق، نشر عروض البيع، وإدارة ضيعاتك ودورات التربية.</p>'
-    +'<div class="metric-grid"><div class="metric"><span class="muted small">حالة الحساب</span><strong style="font-size:18px">مسجل الدخول</strong><span class="small">تم التحقق من الجلسة</span></div>'
-    +'<div class="metric"><span class="muted small">السوق</span><strong style="font-size:18px">تصفح العروض</strong><a href="#/market" class="small">الانتقال للسوق ←</a><br><a href="#/sell" class="small">إضافة عرض للبيع ←</a></div>'
-    +'<div class="metric"><span class="muted small">دورات التربية</span><strong style="font-size:18px">إدارة الضيعة</strong><a href="#/farms" class="small">الانتقال للضيعات ←</a></div></div>'
-    +'<div class="card"><h3>معلومات الحساب</h3><p>البريد الإلكتروني: <b dir="ltr">'+esc(u.email)+'</b></p><p class="small muted">معرّف الحساب: <span dir="ltr">'+esc(u.id)+'</span></p></div></section></div></main>');
+    +'<main><section class="hx-hero hx-dash"><div class="container"><span class="eyebrow">حسابي</span><h1>مرحباً، '+esc(name)+'</h1><p>تصفّح السوق، انشر عروضك، وتابع طلباتك وضيعتك من مكان واحد.</p></div></section>'
+    +'<div class="container"><section class="hx-tiles">'
+    +tiles.map(function(t){return '<a class="hx-cat" href="#'+t[2]+'"><span class="hx-cat-ic" aria-hidden="true">'+t[0]+'</span><b>'+t[1]+'</b></a>'}).join('')
+    +'</section><div class="card" style="margin:18px 0 30px"><h3>معلومات الحساب</h3><p>البريد الإلكتروني: <b dir="ltr">'+esc(u.email)+'</b></p></div></div></main>'+footer());
     $('lo').addEventListener('click',async function(){await client().auth.signOut();go('/')});
   }catch(e){fail(e)}
 }
